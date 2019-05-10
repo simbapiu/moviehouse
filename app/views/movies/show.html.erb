@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag(@movie.image_url, width:"25%") %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @movie.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @movie.name %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @movie.year %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @movie.genre %>
+</p>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

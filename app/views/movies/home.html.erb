@@ -1,0 +1,11 @@
+<h1>Welcome to movies House</h1>
+<% if current_user %>
+  <%= link_to 'Sing out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <div>
+  <%= link_to 'Sing up', new_user_registration_path %>
+  </div>
+  <div>
+  <%= link_to 'Sing in', new_user_session_path %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<% if admin_signed_in? %>
+  <%= render "admin_index" %>
+  <%= link_to 'New Movie', new_movie_path %>
+<% elsif user_signed_in? %>
+  <%= render "user_index" %>
+<% else %>
+  <%= render "unregistered_index" %>
+  <%= link_to "Log In", user_session_path %>
+<% end %>
