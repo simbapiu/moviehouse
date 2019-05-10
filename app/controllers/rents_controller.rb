@@ -12,6 +12,10 @@ class RentsController < ApplicationController
   def show
   end
 
+  def make_a_rent
+    
+  end
+
   # GET /rents/new
   def new
     @rent = Rent.new
