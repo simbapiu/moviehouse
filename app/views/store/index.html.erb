@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<% cache @movies do %>
+<% @movies.each do |movie| %>
+  <% cache movie do %>
+    <div class="entry">
+      <%= image_tag(movie.image_url)%>
+        <h3><%= movie.name %></h3>
+        <p>
+        <%= sanitize(movie.code) %>
+        <%= sanitize(movie.year) %>
+        <%= sanitize(movie.genre) %>
+        </p>
+        <div class="price_line">
+          <span class="price"><%= number_to_currency(movie.price) %></span> 
+          <button type="button" class="btn btn-danger"><%= button_to 'Add to Cart', line_items_path(movie_id: movie) %></button>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

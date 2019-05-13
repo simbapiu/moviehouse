@@ -12,13 +12,14 @@
     <td class="list_description">
       <dl>
         <dt><%= movie.name %></dt>
-        <dd><%= truncate(strip_tags(movie.code), length: 80) %></dd>
-        <dd><%= truncate(strip_tags(movie.year), length: 80) %></dd>
-        <dd><%= truncate(strip_tags(movie.genre), length: 80) %></dd>
+        <dd><%= movie.code %></dd>
+        <dd><%= movie.year %></dd>
+        <dd><%= movie.genre %></dd>
+        <dd> <span class="price"><%= number_to_currency(movie.price) %></span> </dd>
       </dl>
     </td>
     <td class="list_action">
-      <button type="button" class="btn btn-danger">Rent</button> 
+      <button type="button" class="btn btn-danger"><%= button_to 'Add to Cart', line_items_path(movie_id: movie) %></button>
     </td>
   </tr>
 <% end %>

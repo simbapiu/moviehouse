@@ -12,9 +12,10 @@
     <td class="list_description">
       <dl>
         <dt><%= movie.name %></dt>
-        <dd><%= truncate(strip_tags(movie.code), length: 80) %></dd>
-        <dd><%= truncate(strip_tags(movie.year), length: 80) %></dd>
-        <dd><%= truncate(strip_tags(movie.genre), length: 80) %></dd>
+        <dd><%= movie.code %></dd>
+        <dd><%= movie.year %></dd>
+        <dd><%= movie.genre %></dd>
+        <dd><%= movie.price %></dd>
       </dl>
     </td>
 
