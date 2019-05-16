@@ -9,13 +9,15 @@
       <%= image_tag(movie.image_url)%>
         <h3><%= movie.name %></h3>
         <p>
-        <%= sanitize(movie.code) %>
-        <%= sanitize(movie.year) %>
-        <%= sanitize(movie.genre) %>
+        <%= movie.code %> <br/>
+        <%= movie.year %>  <br/>
+        <%= movie.genre %>  <br/>
         </p>
         <div class="price_line">
           <span class="price"><%= number_to_currency(movie.price) %></span> 
-          <button type="button" class="btn btn-danger"><%= button_to 'Add to Cart', line_items_path(movie_id: movie) %></button>
+        </div>
+        <div class="button">
+          <span><%= button_to 'Add to Cart', line_items_path(movie_id: movie), class:"btn btn-danger" %> </span>
         </div>
       </div>
     <% end %>

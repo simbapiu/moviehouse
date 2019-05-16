@@ -2,8 +2,8 @@
   <%= render "admin_index" %>
   <%= link_to 'New Movie', new_movie_path %>
 <% elsif user_signed_in? %>
-  <%= render "user_index" %>
+  <% controller.redirect_to store_index_path %>
 <% else %>
   <%= render "unregistered_index" %>
-  <%= link_to "Log In", user_session_path %>
+  <%= link_to "Sign In", user_session_path %>
 <% end %>

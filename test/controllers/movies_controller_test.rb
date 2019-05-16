@@ -3,6 +3,14 @@ require 'test_helper'
 class MoviesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @movie = movies(:one)
+    @update = {
+      code:      'TODO001',
+      name:      'Lorem Ipsum',
+      year:      '1994',
+      genre:     'Science Lorem',
+      image_url: 'lorem.jpg',
+      price:     '15'
+    }
   end
 
   test "should get index" do
@@ -17,7 +25,7 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create movie" do
     assert_difference('Movie.count') do
-      post movies_url, params: { movie: { code: @movie.code, genre: @movie.genre, name: @movie.name, year: @movie.year } }
+      post movies_url, params: { movie: @update }
     end
 
     assert_redirected_to movie_url(Movie.last)
@@ -34,7 +42,7 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update movie" do
-    patch movie_url(@movie), params: { movie: { code: @movie.code, genre: @movie.genre, name: @movie.name, year: @movie.year } }
+    patch movie_url(@movie), params: { movie: @update }
     assert_redirected_to movie_url(@movie)
   end
 

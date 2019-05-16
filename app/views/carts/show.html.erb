@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<h2>Your Cart</h2>
+<ul>
+  <% @cart.line_items.each do |item| %>
+  <div class="cart">
+
+    <h4><%= item.movie.name %></h4>
+    <span class="price"><%= number_to_currency(item.movie.price) %></span>
+  </div>
+  <% end %>
+  <div class="total">
+    <h5>Total to Pay:<span class="total_price"><%= number_to_currency(@cart.total_price) %></span></h5>
+  </div>
+  <div class="button">
+    <span><%= link_to 'Add more movies', store_index_path, class:"btn btn-danger"%></span>
+  </div>
+  <div class="button">
+    <span><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"%></span>
+  </div>
+  <div class="button">
+    <span><%= link_to 'Pay', store_index_path, data: { confirm: 'Thanks for your purchase' }, class:"btn btn-danger"%></span>
+  </div>
+</ul>

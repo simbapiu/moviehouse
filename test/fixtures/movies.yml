@@ -1,13 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ruby:
+  code:       RUBY001
+  name:       Ruby on Rails
+  year:       14/05/2019
+  genre:      Action
+  image_url:  ruby.jpg
+  price:      1000
 
 one:
   code: MyString
   name: MyString
   year: MyString
   genre: MyString
+  image_url: MyString
+  price: 1
 
 two:
   code: MyString
   name: MyString
   year: MyString
   genre: MyString
+  image_url: MyString
+  price: 1
