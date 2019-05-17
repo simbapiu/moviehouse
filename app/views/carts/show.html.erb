@@ -4,7 +4,6 @@
 <ul>
   <% @cart.line_items.each do |item| %>
   <div class="cart">
-
     <h4><%= item.movie.name %></h4>
     <span class="price"><%= number_to_currency(item.movie.price) %></span>
   </div>
@@ -19,6 +18,8 @@
     <span><%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"%></span>
   </div>
   <div class="button">
-    <span><%= link_to 'Pay', store_index_path, data: { confirm: 'Thanks for your purchase' }, class:"btn btn-danger"%></span>
+    <span><%= button_to 'Make a rent', @cart, method: :delete, data: { confirm: %w{Success Canceled}.sample },class:"btn btn-danger"%></span>
   </div>
+
+</div>
 </ul>
