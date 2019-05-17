@@ -1,7 +1,7 @@
 module CurrentCart
   private
   def set_cart
-    if Cart.find(session[:cart_id]) == nil
+    if @cart == nil
       @cart = Cart.create
       session[:cart_id] = @cart.id
     else

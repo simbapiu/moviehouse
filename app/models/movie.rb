@@ -1,5 +1,6 @@
 class Movie
   include Mongoid::Document
+
   field :image_url, type: String
   field :code, type: String
   field :name, type: String
