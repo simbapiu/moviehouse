@@ -13,9 +13,9 @@
       <% end %>
       <% if signed_in? %>
         <li class="nav-link"><%= link_to 'Show', carts_url %></li>
-      <% end %>
+      <% end %>k8
       <% if admin_signed_in? %>
-        <li class="nav-link"><%= link_to 'New Movie', movies_new_path %></li>
+        <li class="nav-link"><%= link_to 'New Movie', new_movie_path %></li>
       <% end %>
       <div class="login">
         <% if user_signed_in? %>
