@@ -12,7 +12,7 @@
   <% end %>
   <div class="field">
     <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.text_field :image_url, autofocus: true%>
   </div>
 
   <div class="field">
@@ -37,7 +37,7 @@
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, step: :any %>
   </div>
 
   <div class="actions">

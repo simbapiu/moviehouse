@@ -23,10 +23,10 @@ class MovieTest < ActiveSupport::TestCase
                       image_url: 'example.jpg')
     movie.price = -1
     assert movie.invalid?
-    assert_equal ["must be greater than or equal to 0"],
+    assert_equal ["must be greater than or equal to 0.1"],
       movie.errors[:price]
 
-    movie.price = 0
+    movie.price = 0.1
     assert movie.valid?
   end
 
@@ -39,7 +39,7 @@ class MovieTest < ActiveSupport::TestCase
               image_url: image_url)
   end
 
-  test "image url" do
+  test "image_url" do
     ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
       http://a.b.c/x/y/z/fred.gif }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
@@ -56,8 +56,8 @@ class MovieTest < ActiveSupport::TestCase
   test "movie is not valid without a unique name" do
     movie = Movie.new(code:      'XXX000',
                       name:      movies(:ruby).name,
-                      year:      'xxxx',
-                      genre:     'Ficion',
+                      year:      '1993',
+                      genre:     'Fiction',
                       image_url: 'example.jpg')
     
     assert movie.invalid?
