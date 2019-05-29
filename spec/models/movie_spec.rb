@@ -4,7 +4,7 @@ RSpec.describe Movie, type: :model do
   context "Verify that movie attributes it's correct" do
     before(:all)do
       @movies = Movie.new(code: "My code", name: "My name", price:45.5, year: "My year", genre: "My genre",
-        image_url: "image.png")
+        image_url: "aloha.png")
     end
 
     it { is_expected.to have_field(:code).of_type(String) }
@@ -34,7 +34,7 @@ RSpec.describe Movie, type: :model do
 
     it { is_expected.to have_field(:image_url).of_type(String) }
     it "should have a matching image_url" do
-      expect(@movies.image_url).to eq("image.png")
+      expect(@movies.image_url).to eq("aloha.png")
     end
   end
 

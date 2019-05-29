@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe MoviesController, :type => :controller do
+RSpec.describe CartsController, type: :controller do
   describe "GET index" do
     it "has a 200 status code" do
       get :index
@@ -10,12 +10,12 @@ RSpec.describe MoviesController, :type => :controller do
 
   describe "responds to" do
     it "responds to html by default" do
-      post :create, :params => { :movie => { :name => "default" } }
+      post :create, :params => { :carts => { :name => "default" } }
       expect(response.content_type).to eq "text/html"
     end
 
     it "responds to custom formats when provided in the params" do
-      post :create, :params => { :movie => { :name => "default" }, :format => :json }
+      post :create, :params => { :carts => { :name => "default" }, :format => :json }
       expect(response.content_type).to eq "application/json"
     end
   end

@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :movie do
-    image_url { "My image" }
-    code      { "XXX001" }
-    name      { "My name" }
-    genre     { "My genre" }
+
+    name      { "Alokawai" }
+    image_url { "HA.png" }
+    code      { "XXX001 " }
     year      { "1990" }
+    genre     { "My genre" }
     price     { 45.5 }
 
   end
