@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 
+
 RSpec.feature "New Movie", type: :feature do
   scenario "Add new movie" do
+    DatabaseCleaner.clean
     movie = create(:movie, name: "Alokawai")
 
     visit movie_path(movie)
@@ -15,4 +17,5 @@ RSpec.feature "New Movie", type: :feature do
     expect(page).to have_link("Edit")
 
   end
+
 end

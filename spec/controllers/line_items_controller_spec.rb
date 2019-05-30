@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CartsController, type: :controller do
+RSpec.describe LineItemsController, type: :controller do
   describe 'GET index' do
     it 'has a 200 status code' do
       get :index
@@ -10,13 +10,8 @@ RSpec.describe CartsController, type: :controller do
 
   describe 'responds to' do
     it 'responds to html by default' do
-      post :create, :params => { :carts => { :name => 'default' } }
+      post :index, :params => { :LineItems => { :name => 'default' } }
       expect(response.content_type).to eq 'text/html'
-    end
-
-    it 'responds to custom formats when provided in the params' do
-      post :create, :params => { :carts => { :name => 'default' }, :format => :json }
-      expect(response.content_type).to eq 'application/json'
     end
   end
 
@@ -29,7 +24,7 @@ RSpec.describe CartsController, type: :controller do
 
     it 'renders the widgets/index template' do
       get :index
-      expect(response).to render_template('carts/index')
+      expect(response).to render_template('line_items/index')
       expect(response.body).to eq ''
     end
   end

@@ -9,4 +9,13 @@ FactoryBot.define do
     price     { 45.5 }
 
   end
+
+  factory :edit_movie do
+    name      { "Alokawai2" }
+    image_url { "HA.png" }
+    code      { "XXX002 " }
+    year      { "1992" }
+    genre     { "My genre" }
+    price     { 15.5 }
+  end
 end
