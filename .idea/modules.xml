@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../TerminalNoreste/.idea/TerminalNoreste.iml" filepath="$PROJECT_DIR$/../TerminalNoreste/.idea/TerminalNoreste.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../homieTech/.idea/homieTech.iml" filepath="$PROJECT_DIR$/../homieTech/.idea/homieTech.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/moviehouse.iml" filepath="$PROJECT_DIR$/.idea/moviehouse.iml" />
       <module fileurl="file://$PROJECT_DIR$/../piuItems/.idea/piuItems.iml" filepath="$PROJECT_DIR$/../piuItems/.idea/piuItems.iml" />
     </modules>

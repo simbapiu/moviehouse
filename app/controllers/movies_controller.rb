@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :verify_user, only: [:index]
 
   # GET /movies
   # GET /movies.json
@@ -65,6 +66,10 @@ class MoviesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
       @movie = Movie.find(params[:id])
+    end
+
+    def verify_user
+      redirect_to store_index_path if user_signed_in?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

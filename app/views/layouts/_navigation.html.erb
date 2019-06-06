@@ -13,18 +13,11 @@
       <% end %>
       <% if signed_in? %>
         <li class="nav-link"><%= link_to 'Show', carts_url %></li>
-      <% end %>k8
+      <% end %>
       <% if admin_signed_in? %>
         <li class="nav-link"><%= link_to 'New Movie', new_movie_path %></li>
       <% end %>
-      <% if user_signed_in? %>
-        <li class="nav-link"><%= link_to 'Sing out', destroy_user_session_path, method: :delete %></li>
-      <% elsif admin_signed_in? %>
-        <li class="nav-link"><%= link_to 'Sing out', destroy_admin_session_path, method: :delete %></li>
-      <% else %>
-        <li class="nav-link"><%= link_to 'Sing in', new_user_session_path %></li>
-        <li class="nav-link"><%= link_to 'Sing up', new_user_registration_path %></li>
-      <% end %>
+      <%= render 'layouts/login' %>
     </ul>
   </div>
 </nav>

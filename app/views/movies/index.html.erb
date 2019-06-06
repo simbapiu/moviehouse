@@ -1,9 +1,30 @@
-<% if admin_signed_in? %>
-  <%= render "admin_index" %>
-  <%= link_to 'New Movie', new_movie_path %>
-<% elsif user_signed_in? %>
-  <% controller.redirect_to store_index_path %>
-<% else %>
-  <%= render "unregistered_index" %>
-  <%= link_to "Sign In", user_session_path %>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<table>
+  <% @movies.each do |movie| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td>
+          <%= image_tag(movie.image_url, class: 'list_image') %>
+        </td>
+
+        <td class="list_description">
+          <dl>
+            <dt><%= movie.name %></dt>
+            <dd><%= movie.code %></dd>
+            <dd><%= movie.year %></dd>
+            <dd><%= movie.genre %></dd>
+            <dd><%= movie.price %></dd>
+          </dl>
+        </td>
+        <% if admin_signed_in? %>
+            <td class="list_action">
+              <button type="button" class="btn btn-danger"><%= link_to 'Show', movie %></button><br />
+              <button type="button" class="btn btn-danger"><%= link_to 'Edit', edit_movie_path(movie) %></button><br />
+              <button type="button" class="btn btn-danger"><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %> </button>
+            </td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>

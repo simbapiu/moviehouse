@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :line_items
-  resources :rents
   resources :carts
   resources :store
   resources :movies

@@ -14,7 +14,7 @@ RSpec.feature 'EditMovies', type: :feature do
   end
 
   scenario 'Editing a movie' do
-    @movie = Movie.create!(:name => 'My name', :code => 'My code', :image_url => 'HA.png',
+    @movie = Movie.create(:name => 'My name', :code => 'My code', :image_url => 'HA.png',
                             :year => 'My year', :genre => 'My genre', :price => 1)
 
     visit edit_movie_path(@movie)
