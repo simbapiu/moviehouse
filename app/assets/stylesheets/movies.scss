@@ -11,12 +11,11 @@
     vertical-align: top;
   }
 
-  .list_image {
+  .list-image {
     width: 250px;
-    height: 320px;
   }
 
-  .list_description {
+  .movie-information {
     width: 100%;
 
     dl {
@@ -36,33 +35,34 @@
     }
   }
 
-  .list_actions{
+  .list-action{
     font-size: x-small;
     text-align: right;
     padding-left: 1em;
 
   }
 
-  .list_action a{
+  .list-action a{
     height: 100%;
     color: #FFF;
   }
 
-  .list_action a:hover{
+  .list-action a:hover{
     background: transparent;
     text-decoration: none;
   }
 
-  .list_action button{
+  .list-action button{
     width: 100%;
     margin: 20px;
   }
 
-  .list_line_even {
+  .list-line-even {
     background: #fff;
   }
 
-  .list_line_odd {
+  .list-line-odd {
     background: #fff;
   }
+
 }

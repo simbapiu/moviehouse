@@ -4,22 +4,22 @@
 
 <table>
   <% @movies.each do |movie| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
         <td>
-          <%= image_tag(movie.image_url, class: 'list_image') %>
+          <%= image_tag(movie.image_url, class: 'list-image') %>
         </td>
 
-        <td class="list_description">
+        <td class="movie-information">
           <dl>
             <dt><%= movie.name %></dt>
             <dd><%= movie.code %></dd>
             <dd><%= movie.year %></dd>
             <dd><%= movie.genre %></dd>
-            <dd><%= movie.price %></dd>
+            <dd><span class="price"><%= number_to_currency(movie.price) %></span></dd>
           </dl>
         </td>
         <% if admin_signed_in? %>
-            <td class="list_action">
+            <td class="list-action">
               <button type="button" class="btn btn-danger"><%= link_to 'Show', movie %></button><br />
               <button type="button" class="btn btn-danger"><%= link_to 'Edit', edit_movie_path(movie) %></button><br />
               <button type="button" class="btn btn-danger"><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %> </button>

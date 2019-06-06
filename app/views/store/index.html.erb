@@ -6,19 +6,25 @@
 <% @movies.each do |movie| %>
   <% cache movie do %>
     <div class="entry">
-      <%= image_tag(movie.image_url)%>
-        <h3><%= movie.name %></h3>
+      <div class="image-movie">
+        <%= image_tag(movie.image_url)%>
+      </div>
+      <div class="movie-description">
+        <h2><%= movie.name %></h2>
         <p>
         <%= movie.code %> <br/>
         <%= movie.year %>  <br/>
         <%= movie.genre %>  <br/>
         </p>
-        <div class="price_line">
+        <div class="price-line">
           <span class="price"><%= number_to_currency(movie.price) %></span> 
         </div>
+      </div>
+      <div class="button-movie">
         <div class="button">
           <span><%= button_to 'Add to Cart', line_items_path(movie_id: movie), class:"btn btn-danger" %> </span>
         </div>
+      </div>
       </div>
     <% end %>
   <% end %>
